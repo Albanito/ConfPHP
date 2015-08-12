@@ -220,3 +220,10 @@ h1[class="404"] {
     margin-bottom: 2rem;
     text-transform: uppercase;
 }
+
+.comments {
+    border-width:1px;
+    border-style:dotted;
+    border-color:black;
+    padding-left: 10px;
+}
