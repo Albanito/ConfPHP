@@ -18,6 +18,7 @@
                         <h3 class="date">{{$post->date_start}} fin: {{$post->date_start}} </h3>
                     </footer>
                 </article>
+                <div class="comments">
             @if(count($post->comments)>0)
                 @foreach($post->comments as $comment)
                    <p>Auteur: {{$comment->email}}</p>
@@ -26,15 +27,16 @@
                 @else
                 <p>Aucun commentaire. Soyez le premier à commenter ce post!</p>
                 @endif
+                </div>
             <div>
             {!! Form::open() !!}
                 <div class="form-group">
-                {!! Form::label('Email') !!}
+                {!! Form::label('Email') !!}<br>
                 {!! Form::email('blabla') !!}
                 </div>
 
                 <div class="form-group">
-                {!! Form::label('Commentaire') !!}
+                {!! Form::label('Commentaire') !!}<br>
                 {!! Form::textarea('name') !!}
                 {!! Form::submit('valider') !!}
                 </div>

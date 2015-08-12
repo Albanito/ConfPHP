@@ -23,7 +23,7 @@
                     <p>Nombre de commentaires : {{count($post->comments)}}</p>
 
                     <footer>
-                        <h3 class="date">{{$post->date_start}} fin: {{$post->date_start}} </h3>
+                        <h3 class="date">Debut: {{$post->DateStart()}} fin: {{$post->DateEnd()}} </h3>
                     </footer>
                 </article>
                 @endforeach

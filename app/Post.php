@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use next;
+use Carbon\Carbon;
 
 
 class Post extends Model
@@ -20,6 +21,13 @@ class Post extends Model
         'link_thumbnail',
         'url_site',
     ];
+
+    public function scopeDateStart($query) {
+        return Carbon::parse($query->getModel()->date_start)->formatLocalized('%e %b %Y, %Hh%M');
+    }
+    public function scopeDateEnd($query) {
+        return Carbon::parse($query->getModel()->date_end)->formatLocalized('%e %b %Y, %Hh%M');
+    }
 
     public function tags() {
         return $this->belongsToMany('App\Tag');
